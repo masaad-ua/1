@@ -9,9 +9,18 @@ function getValue(condition){
 
     }
 }
-
 getValue();
 
 /*27*/
+let a = "a";
+let text = "界";
+let b = "b";
+
+
+
+
+
+
+
 
 
