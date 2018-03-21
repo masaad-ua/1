@@ -1,88 +1,103 @@
-/*************25**************/
+/*26*/
+function getValue(condition){
+	if(condition){
+		var value = "blue";
+		return value;
+	}else {
+		// console.log(value);
+		return null;
 
-let a = 12; // доступна глобально
-function  myFunction(){
-    console.log(a);
-    let b = 13; //доступна в пределах функции\
-    if(true){
-        let c = 14; // достуна только в инструкции "if"
-        console.log(b);
-    }
-    console.log(c);
-
+	}
 }
-//myFunction();
+getValue();
+
+/*27*/
+
+let text = "界";
+
+// console.log(text.length);
+// console.log(/^.$/.test(text));
+
+// console.log(text.charAt(0));
+// console.log(text.charAt(1));
+
+// console.log(text.charCodeAt(0));
+// console.log(text.charCodeAt(1));
+
+/*40*/
+let text1 = "界a";
+// console.log(text1.charCodeAt(0));
+// console.log(text1.charCodeAt(1));
+// console.log(text1.charCodeAt(2));
+
+// console.log(text1.codePointAt(0));
+// console.log(text1.codePointAt(1));
+// console.log(text1.codePointAt(2));
+
+let values = ["界", "界"];
+
+let normalized = values.map( function (text) {
+	return text.normalize();
+});
 
 
-//var a = 0;
-//var a =1;
-//console.log(a);
-function  myFunction2(){
-    var b = 2;
-    var b = 3;
-    console.log(b);
+/*42*/
+let text2 = "洋";
+// console.log(text2.length);
+// console.log(/^.$/.test(text2));
+// console.log(/^.$/u.test(text2));
+
+
+function codePointLength(text) {
+	let result = text.match(/[\s\S]/gu);
+	return result ? result.length : 0;
 }
+// console.log(codePointLength("abc"));
+// console.log(codePointLength("洋bc"));
 
+/*44*/
 
-
-//myFunction2();
-
-/*************28**************/
-
-const pi = 3.141;
-var r = 2;
-//console.log(pi * r  * r); //Выведет "12.564"
-//pi = 12;
-
-/*************31*************/
-function myFunction3(a, b){
-    return a + b;
+function hasRegExpU() {
+	try{
+		var pattern = new RegExp(".", "u");
+		return true;
+	} catch(ex) {
+		return false;
+	}
 }
-var data = [1, 4];
-var result = myFunction3.apply(null, data);
-//console.log(result);
+// console.log(hasRegExpU());
 
-var result2 = myFunction3(...data);
-//console.log(result2);
+/*45*/
+let msg = "Hello world!";
 
+// console.log(msg.startsWith("Hello"));
+// console.log(msg.endsWith("!"));
+// console.log(msg.includes("o"));
+//
+// console.log(msg.startsWith("o"));
+// console.log(msg.endsWith("world!"));
+// console.log(msg.includes("!!"));
 
-/*************32*************/
+/*46*/
+console.log("x".repeat(3));
+console.log("hello".repeat(2));
+console.log("abc".repeat(4));
 
-let array1 = [2,3,4];
-let array2 = [1,...array1, 6, 7, 7];
-//console.log(array2);
+let text3 = "hello1 hello2 hello3",
+	pattern = /hello\d\s?/,
+	result = pattern.exec(text3),
 
-/*************33*************/
+	globalPattern = /hello\d\s?/g,
+	globalResult = globalPattern.exec(text3),
 
-function  myFunction4(a, b){
-    var args = Array.prototype.slice.call(arguments, myFunction4.length)
-}
+	stickyPattern =/hello\d\s?/y,
+	stickyResult = stickyPattern.exec(text3);
 
-
-/*************35*************/
-
-let myArray = [1, 2, 3];
-let a2, b2, c2;
-[a2, b2, c2] = myArray;
-
-console.log(myArray);
-
-
-let [a3,...b3] = [1, 2, 3, 4, 5, 6];
-console.log(a3);
-console.log(Array.isArray(b3));
-console.log(b3);
-
-/*************35*************/
-let text1 = "hello1 hello2 hello3",
-    pattern1 = /hello\d\s?/,
-    result1 = pattern1.exec(text1),
-
-    globalPattern = /hello\d\s?/g,
-    globalResult = globalPattern.exec(text1),
-
-    //stickyPattern = /hello\d\s?/y,
-    stickyResult = globalPattern.exec(text1);
+// console.log(result[0]);
+// console.log(globalResult[0]);
+// console.log(stickyResult[0]);
+//let pattern2 = /hello\d/y;
+//console.log(pattern2.sticky);
 
 /***********48*************/
 function hasRegExpY(){
@@ -192,4 +207,7 @@ let bookData2 = pick(book2, "author", "year");
 console.log(bookData2.author);
 
 /*******74*******/
+function doSomething(){
 
+}
+console.log(doSomething.name);
