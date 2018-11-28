@@ -207,6 +207,16 @@ var message2 = "Multiline \n\
 string";
 //console.log(message2);
 
+
+/*********53**********/
+
+let message21 = `
+Hello 
+strong`.trim();
+//console.log(message21);
+
+
+
 /************54*************/
 
 let name = "Nickolas",
@@ -216,7 +226,7 @@ let name = "Nickolas",
 let count1 = 10,
 	price1 = 0.25,
 	message1 = `${count1} items cost $${(count1 * price1).toFixed(2)}.`;
-//console.log(message1);
+console.log(message1);
 
 let name3 = "Nicholas",
 	message3 = `Hello,  ${
@@ -228,6 +238,26 @@ let name3 = "Nicholas",
 let count4 = 10,
 	price4 = 0.25;
 	//message4 = passthru `${count} items cost $${(count * price).toFixed(2)}.` ;
+/******57******/
+
+function passthru(literals, ...substitutions){
+	let result = "";
+
+	//цыкл  по количеству элементов в массиве
+	for (let i = 0; i < substitutions.length; i++ ){
+		result += literals[i];
+		result += substitutions[i];
+	}
+
+	//добавит последний литерал
+	result += literals[literals.length - 1];
+	return result + `AAAAAA`;
+}
+
+let count11 = 10,
+	price11 = 0.25,
+	message11 = passthru`${count11} items cost $${(count11 * price11).toFixed(2)}`;
+    console.log(message11);
 
 /******62******/
 function makeRequest(url, timeout = 2000, callback = function(){}){
