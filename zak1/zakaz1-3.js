@@ -31,7 +31,7 @@ function getValue2(condition){
 const person10 = {
 	name: ""
 };
-console.log(varso);
+//console.log(varso);
 var varso = "2000";
 
 /*************32************/
@@ -230,9 +230,18 @@ let count4 = 10,
 	//message4 = passthru `${count} items cost $${(count * price).toFixed(2)}.` ;
 
 /******62******/
-function makeRequest(url, timeout = 2000, callback = function(){}){
-
+function mixArgs2(first, second) {
+	console.log("Hello");
+	console.log(first === arguments[0]);
+	console.log(second === arguments[1]);
+	first = "c";
+	second = "d";
+	console.log( first === arguments[0]);
+	console.log( second === arguments[1]);
 }
+
+mixArgs2("a", "b");
+
 
 /*****64********/
 function mixArgs(first ,second = "b"){
@@ -265,7 +274,8 @@ let book = {
 };
 
 let bookData = pick(book, "author", "year");
-//console.log(bookData.author);
+console.log(bookData.author);
+console.log(bookData.year);
 
 /*******69********/
 
