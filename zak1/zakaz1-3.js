@@ -336,13 +336,15 @@ function doSomething(){
 /*******75********/
 function Person(name){
 	this.name = name;
+	return this;
 }
+
 
 var person = new Person("Nicholas");
 var notAPerson  = Person("Nicholas");
 
-//console.log(person);
-//console.log(notAPerson);
+console.log(person);
+console.log(notAPerson);
 
 //console.log(Person);
 
