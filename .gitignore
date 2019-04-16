@@ -2,6 +2,7 @@
 spa
 .idea/
 node_modules
+bower_components
 app/components
 build
 .idea/.name
